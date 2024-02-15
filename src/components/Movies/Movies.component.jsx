@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom"; // Import Link from react-router-dom
 import { fetchPopularMovies } from "../../slices/Movie/movieslice";
@@ -6,12 +6,14 @@ import { fetchMovieDetails } from "../../slices/Movie/moviedetails";
 import Button from "../Button/Button.component";
 import Imagecomponent from "../Image/Image.component";
 import PlaceholderLoader from "../loader/PlaceholderLoader";
+import { MyContext } from "../../context/MyContext";
 
 const Movies = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const popularMovies = useSelector((state) => state.movies.popularMovies);
   const loading = useSelector((state) => state.movies.loading);
+  const {setState } = useContext(MyContext);
 
   // Divide movieImages array into subarrays with a maximum of two images each
   const dividedMovieImages = [];
@@ -26,6 +28,7 @@ const Movies = () => {
   const handleClick = (id) => {
     dispatch(fetchMovieDetails(id));
     navigate(`/movie/${id}`);
+    setState(true)
   };
 
   const [hoveredMovie, setHoveredMovie] = useState(null);
