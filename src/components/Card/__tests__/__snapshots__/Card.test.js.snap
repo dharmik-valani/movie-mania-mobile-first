@@ -8,11 +8,10 @@ exports[`Card matches card snapshot 1`] = `
   <div
     className="flex gap-2 items-center"
   >
-    <img
-      alt=""
-    />
+    <img />
     <div>
       Play trailer 
+      1
     </div>
   </div>
 </div>

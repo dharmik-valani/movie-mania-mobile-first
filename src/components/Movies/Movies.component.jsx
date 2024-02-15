@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"; // Import Link from react-router
 import { fetchPopularMovies } from "../../slices/Movie/movieslice";
 import { fetchMovieDetails } from "../../slices/Movie/moviedetails";
 import Button from "../Button/Button.component";
+import Imagecomponent from "../Image/Image.component";
 import PlaceholderLoader from "../loader/PlaceholderLoader";
 
 const Movies = () => {
@@ -55,11 +56,10 @@ const Movies = () => {
                 onMouseEnter={() => handleMouseEnter(movie)}
                 onMouseLeave={handleMouseLeave}
               >
-                {/* Image Common component */}
-                <img
+                <Imagecomponent
                   src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-                  alt={`Movie ${index * 2 + subIndex + 1}`}
-                  className="w-full"
+                  alttext={`Movie ${index * 2 + subIndex + 1}`}
+                  imageclassName={"w-full"}
                   onClick={() => handleClick(movie.id)}
                 />
                 {hoveredMovie && hoveredMovie.id === movie.id && (

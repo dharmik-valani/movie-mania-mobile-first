@@ -27,11 +27,11 @@ describe("Card", () => {
   });
 
   it("Renders Card component", async () => {
-      let data = {
-        index: 1,
-        name: "hello"
-      }
-    render(<Card data={data}/>);
+    let data = {
+      index: 1,
+      name: "hello"
+    };
+    render(<Card index={data.index} />);
     const linkElement = await screen.getByTestId('Play');
     expect(linkElement).toBeInTheDocument();
   });
@@ -41,11 +41,9 @@ describe("Card", () => {
     let data = {
       index: 1,
       name: "hello"
-    }
-    const tree = await renderer.create(<Card data={data} />).toJSON();
+    };
+    const tree = await renderer.create(<Card index={data.index} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
 });
-
-

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header matches header snapshot 1`] = `
+<div
+  className="bg-[#212121] p-4 sticky top-0 z-10"
+  data-testid="Pop Movies"
+>
+  <div
+    className="flex justify-between"
+  >
+    <div
+      className="flex"
+    >
+      <div
+        className="text-white text-xl"
+      >
+        Pop Movies
+      </div>
+    </div>
+    <img
+      alt="more-icon"
+      className="cursor-pointer"
+    />
+  </div>
+</div>
+`;

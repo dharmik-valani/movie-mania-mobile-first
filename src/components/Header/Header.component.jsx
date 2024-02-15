@@ -1,33 +1,28 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import MoreIcon from "../../assets/Header/moreicon.svg";
 import backicon from "../../assets/Header/backicon.svg";
+import Imagecomponent from "../Image/Image.component";
 
-const Header = ({ isMovieDetails, setIsMovieDetails }) => {
-  const navigate = useNavigate();
+const Header = ({ text, backbutton, morebutton ,onClick}) => {
 
-  const handleClick = () => {
-    navigate("/");
-    setIsMovieDetails(false);
-  };
 
   return (
-    <div className="bg-[#212121] p-4 sticky top-0 z-10">
+    <div className="bg-[#212121] p-4 sticky top-0 z-10" data-testid={text}>
       <div className="flex justify-between">
         <div className="flex">
-          {isMovieDetails && (
-            <img
+          {backbutton && (
+            <Imagecomponent
               src={backicon}
-              alt="back-arrow"
-              className="mr-2 cursor-pointer"
-              onClick={()=>handleClick()}
+              alttext={"back-arrow"}
+              imageclassName={"mr-2 cursor-pointer"}
+              onClick={onClick}
             />
           )}
-          <div className="text-white text-xl">
-            {isMovieDetails ? "Movie details" : "Pop Movies"}
-          </div>
+          <div className="text-white text-xl">{text}</div>
         </div>
-        <img src={MoreIcon} alt="more icon" className="cursor-pointer" />
+        {morebutton && (
+          <Imagecomponent src={MoreIcon} alttext={"more-icon"} imageclassName={"cursor-pointer"} />
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import loader from '../../assets/Movies/loader.gif'
+import loader from "../../assets/Movies/loader.gif";
 import Card from "../Card/Card.component";
 import { fetchMovieDetails } from "../../slices/Movie/moviedetails";
 import Button from "../Button/Button.component";
+import Imagecomponent from "../Image/Image.component";
 
 // Store movie images in an array
 
-const MovieDetails = ({ setIsMovieDetails }) => {
+const MovieDetails = () => {
   const dispatch = useDispatch();
   const MovieDetails = useSelector(
     (state) => state.oneMoviedetails.moviesdetails
@@ -16,23 +17,19 @@ const MovieDetails = ({ setIsMovieDetails }) => {
   const loading = useSelector((state) => state.oneMoviedetails.loading);
 
   const { id } = useParams(); // Get the id parameter from the URL
-  
-  useEffect(() => {
-    setIsMovieDetails(true);
-  }, []);
 
   useEffect(() => {
     dispatch(fetchMovieDetails(id));
   }, [dispatch, id]);
 
-
   // Use the index to access the corresponding movie image
 
   return (
     <>
-      {" "}
       {loading ? (
-        <div className="h-[calc(100vh-60px)] flex items-center justify-center"><img src={loader} alt="" srcset="" className="w-[30%]"/></div>
+        <div className="h-[calc(100vh-60px)] flex items-center justify-center">
+          <Imagecomponent src={loader} imageclassName={"w-[30%]"} />
+        </div>
       ) : (
         <div>
           <div className="bg-[#746A64] text-white p-4 text-2xl mb-6 font-medium">
@@ -40,10 +37,10 @@ const MovieDetails = ({ setIsMovieDetails }) => {
           </div>
           <div className="mx-6">
             <div className="flex">
-              <img
+              <Imagecomponent
                 src={`https://image.tmdb.org/t/p/w185/${MovieDetails?.poster_path}`}
-                alt={`Movie ${id}`}
-                className="w-[115px] h-[170px]"
+                alttext={`Movie ${id}`}
+                imageclassName={"w-[115px] h-[170px]"}
               />
               <div className="ml-3 w-full">
                 <div className="text-xl">{MovieDetails?.release_date}</div>
@@ -53,7 +50,11 @@ const MovieDetails = ({ setIsMovieDetails }) => {
                 <div className="my-5 text-[#212121] font-bold	">
                   {MovieDetails?.vote_average}/10
                 </div>
-                <Button text={'Add to Favorite'} buttonclassName={'bg-[#746A64] p-4 w-full'} textclassName={"text-white text-[16px]"}/>
+                <Button
+                  text={"Add to Favorite"}
+                  buttonclassName={"bg-[#746A64] p-4 w-full"}
+                  textclassName={"text-white text-[16px]"}
+                />
               </div>
             </div>
             <div className="mt-4 text-[#757575] text-[14px] leading-[24px]">

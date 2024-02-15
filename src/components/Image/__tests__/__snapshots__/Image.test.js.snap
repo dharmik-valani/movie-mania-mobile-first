@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Imagecomponent matches image snapshot 1`] = `
+<img
+  alt="Test Alt Text"
+  className="test-class"
+  onClick={[MockFunction]}
+  src="test-image.jpg"
+/>
+`;
