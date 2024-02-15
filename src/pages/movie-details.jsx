@@ -12,7 +12,7 @@ const MovieDetailspage = () => {
 
   return (
     <>
-      <Header text={"Movie details"} backbutton={true} onClick={()=>handleClick()}/>
+      <Header text={"Movie details"} backbutton={true} onClick={()=>handleClick()} morebutton={true}/>
       <MovieDetails />
     </>
   );
