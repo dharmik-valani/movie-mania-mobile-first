@@ -89,18 +89,6 @@ The architecture of this project aims to ensure scalability, maintainability, an
 
 ## Technologies Used
 
-
-
-- **Unit Testing:** Jest with @testing-library/react
-- **Bundling:** Vite
-- **Additional Libraries:**
-    - Redux Toolkit
-    - Date Fns
-    - React Query
-
-
-## Technologies Used
-
 ### Framework and Libraries
 
 - **Framework:** React with Vite
@@ -113,6 +101,14 @@ The architecture of this project aims to ensure scalability, maintainability, an
     - **Tailwind CSS:** Chosen for its utility-first approach, allowing for rapid styling and customization while maintaining a consistent design system.
 
 - **CSS:** CSS Modules (https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+
+- **Unit Testing:** Jest with @testing-library/react
+- **Bundling:** Vite
+- **Additional Libraries:**
+    - Redux Toolkit
+    - Date Fns
+    - React Query
+
 
 ### Project Structure
 
