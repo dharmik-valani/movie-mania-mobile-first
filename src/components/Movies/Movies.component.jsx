@@ -46,7 +46,7 @@ const Movies = () => {
           <PlaceholderLoader />
         </div>
       ) : (
-        dividedMovieImages.map((subarray, index) => (
+        dividedMovieImages?.map((subarray, index) => (
           <div key={index} className="flex w-full">
             {subarray.map((movie, subIndex) => (
               <div
@@ -55,6 +55,7 @@ const Movies = () => {
                 onMouseEnter={() => handleMouseEnter(movie)}
                 onMouseLeave={handleMouseLeave}
               >
+                {/* Image Common component */}
                 <img
                   src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                   alt={`Movie ${index * 2 + subIndex + 1}`}

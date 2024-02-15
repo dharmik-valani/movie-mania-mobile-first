@@ -10,7 +10,6 @@ function App() {
   const [isMovieDetails, setIsMovieDetails] = useState(false);
 
   return (
-    <>
       <BrowserRouter>
         <Header isMovieDetails ={isMovieDetails} setIsMovieDetails={setIsMovieDetails}/>
         <Routes>
@@ -18,7 +17,6 @@ function App() {
           <Route path="/movie/:id" element={<MovieDetails  setIsMovieDetails={setIsMovieDetails}/>} />
         </Routes>
       </BrowserRouter>
-    </>
   );
 }
 
