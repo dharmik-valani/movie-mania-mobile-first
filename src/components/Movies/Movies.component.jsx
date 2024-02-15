@@ -59,6 +59,7 @@ const Movies = () => {
                   src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
                   alt={`Movie ${index * 2 + subIndex + 1}`}
                   className="w-full"
+                  onClick={() => handleClick(movie.id)}
                 />
                 {hoveredMovie && hoveredMovie.id === movie.id && (
                   <div className="opacity-0 transition-opacity duration-300 delay-300 hover:opacity-100  absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
