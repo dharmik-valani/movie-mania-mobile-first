@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card matches card snapshot 1`] = `
+<div
+  className="bg-[#FAFAFA] p-5"
+  data-testid="Play"
+>
+  <div
+    className="flex gap-2 items-center"
+  >
+    <img
+      alt=""
+    />
+    <div>
+      Play trailer 
+    </div>
+  </div>
+</div>
+`;
