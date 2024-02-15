@@ -1,104 +1,146 @@
-## How to run the project
+## Movie Mania: Mobile-First React Application
 
+Welcome to Movie Mania, a mobile-first React application designed to provide users with a seamless movie browsing experience. Follow the instructions below to set up and run the project on your local machine.
 
-1. Clone the repository: 
-    ```http
+## Table of Contents
+
+1. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Architecture Approach](#architecture-approach)
+4. [Technologies Used](#technologies-used)
+5. [Testing](#testing)
+6. [Deployment and Hosting](#deployment-and-hosting)
+7. [Continuous Integration](#continuous-integration)
+
+## Getting Started
+
+1. **Clone the Repository:** 
+    ```bash
     git clone https://github.com/dharmik-valani/movie-mania-mobile-first
     ```
-2. Redirect on project directory
-3. Open terminal and run command  "npm install or yarn install"
-4. create a new .env file
-5. copy environment variable from .env.example file and replace the APIKey and Authorization value given by
- ```
-    VITE_MOVIE_URL=https://api.themoviedb.org/3
-    VITE_MOVIE_APIKEY=
-    VITE_MOVIE_AUTHORIZATION_TOKEN = 
-  ```
-6. Run the command "npm run dev" or "yarn run dev" to start the development preview
-7. To run the test cases. Run the command. npm run test. ( It will run all the test cases and in terminal give you a result)
 
+2. **Navigate to Project Directory:**
+    ```bash
+    cd movie-mania-mobile-first
+    ```
 
-```http
+3. **Install Dependencies:**
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
 
-└── /src 
-  ├── /assets 
-      ├── /compoent-name
-          └──images 
-  ├── /components
-    | ├── /Input 
-         | | ├── Input.compoment.js
-         | | ├── Input.module.css 
-         | | ├── __tests__
-            | | ├── input.test.js
-  ├── /views or pages 
-  ├── /services 
-  ├── /utils 
-  ├── /hooks 
-  ├── /store 
+4. **Create Environment Variables:**
+    - Create a new `.env` file in the root directory.
+    - Copy the environment variables from `.env.example` and replace the placeholders with actual values for `VITE_MOVIE_APIKEY` and `VITE_MOVIE_AUTHORIZATION_TOKEN` provided by the movie dev API.
+
+5. **Start Development Server:**
+    ```bash
+    npm run dev
+    # or
+    yarn run dev
+    ```
+
+6. **Running Tests:**
+    To run the test cases, use the following command:
+    ```bash
+    npm run test
+    ```
+
+## Project Structure
+
+The project follows a well-organized structure for ease of development and maintainability:
+
+```
+/src
+├── /assets
+│   └── /component-name
+│       └── images
+├── /components
+│   ├── /Input
+│   │   ├── Input.component.js
+│   │   ├── Input.module.css 
+│   │   └── __tests__
+│   │       └── input.test.js
+├── /views or pages 
+├── /services 
+├── /utils 
+├── /hooks 
+├── /store 
 └── App.jsx
 └── App.css
-  ├── index.js 
-  ├── index.css
-└── /.env 
-└── /.env.example
+├── index.js 
+├── index.css
+├── .env 
+├── .env.example
 └── / Licence
 ```
 
-## How I plan for this project? How I am thinking the design and architecture approach of this projects?
+## Architecture Approach
 
-As Given task is only for a quick and short. but as per the architecture level i thought like. what if the 
-given of movie App will be used by millions of people. like netflix or other popular platform? and what if multiple devleopment team members will be working on given structure?
+### Design Philosophy
+The architecture of this project aims to ensure scalability, maintainability, and standardization. Here's an overview:
 
-## Architecture I planned:
+1. **Component-based Structure:** Components are organized in a modular manner for reusability and easy management.
+2. **Standard Coding Practices:** ESLint rules are enforced to maintain consistent coding standards across the development team.
+3. **Testing:** Unit tests are incorporated using Jest and @testing-library/react to ensure robustness and reliability of components.
+4. **State Management:** Redux Toolkit is utilized for state management, providing a centralized and predictable way to manage application state.
 
-1.  as per the given architecture I planned a structure architecture for it. so all things are separatly handled.
-2. For standardize development coding standard practice. I am following the ESLint Rules. so as a team all developer team member can follow same rules and architecture
-3. For Testing of any new component's render behaviour, props structure, adding a testcase and their dummy post as well. 
-(Initially we can follow typescript for it if we want to strongly bind the rules and structure and have enough development time)
-4. Now Let me jump on development
-
-    # Framework 
-        1. vite with react  <--- Used This One
-        2. next js
-        3. react js
-
-    # UI Library
-        1. Tailwind UI <--- Used This One
-        2. Material UI,
-        3. AntD 
-        4. Chakra UI
-    # CSS
-        1. module css <--- Used This One ( https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/ )
-        2. styled css   https://styled-components.com/docs 
-    
-    # Unit Testing 
-        1. @testing-library/react and jest
-
-    # Bundling concepts
-        1. vite config <--- Used This One ( inbulit feature)
-        2. webpack
-    
-    # React Packages that I mostly use,
-        1. Redux Toolkit: https://www.npmjs.com/package/@reduxjs/toolkit 
-        2. Date format lirabry: Date Fns or Moment (https://www.npmjs.com/package/date-fns)
-        3. Multiple Env Supported structure
-            -> .env, .env.example, .env.development, .env.production as well
-        4. Es-lint
-
-    # Additinonal Library
-        1. React Query: https://tanstack.com/query/latest (package: https://www.npmjs.com/package/@tanstack/react-query)
-            -> fetching, caching, synchronizing and updating server state i
-    # Deployment and Hosting  (vercel for development preview)
-        
-    # CI-CD continues integration (Github pipeline)
-            -> Vercel trigger, so whenever code push it will goes and live automatically in domain.
-            -> Or we can setup a github workflow when we move it in production
+## Technologies Used
 
 
 
+- **Unit Testing:** Jest with @testing-library/react
+- **Bundling:** Vite
+- **Additional Libraries:**
+    - Redux Toolkit
+    - Date Fns
+    - React Query
 
 
+## Technologies Used
+
+### Framework and Libraries
+
+- **Framework:** React with Vite
+    - **Vite:** Utilized for fast and efficient development with features like lightning-fast hot module replacement (HMR) and optimized build times.
+     - next js
+     - react js
 
 
+- **UI Library:** Tailwind CSS
+    - **Tailwind CSS:** Chosen for its utility-first approach, allowing for rapid styling and customization while maintaining a consistent design system.
+
+- **CSS:** CSS Modules (https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+
+### Project Structure
+
+The project adheres to a modular and organized structure for improved development efficiency and maintainability:
+
+- **Component-based Architecture:** Components are organized into reusable and self-contained modules, promoting code reusability and scalability.
+- **Separation of Concerns:** Views (or pages), components, services, utilities, hooks, and state management are each segregated into dedicated directories, ensuring clear separation of concerns.
+- **CSS Modules:** CSS modules are utilized for component-specific styling, preventing style leakage and conflicts while enabling scoped styling.
 
 
+### Advanced React Structure
+
+In addition to the foundational project structure, the following advanced React structure points are incorporated:
+
+- **Container-Component Pattern:** Embraces the container-component pattern for managing state and data logic separately from presentational components, promoting cleaner and more maintainable code.
+- **Higher-Order Components (HOCs):** Leveraged for cross-cutting concerns such as authentication, logging, and performance monitoring, enhancing code reusability and separation of concerns.
+- **Context API and useContext Hook:** Utilized for managing global state and sharing data between components without prop drilling, offering a more elegant and efficient solution for state management.
+- **Custom Hooks:** Abstracts complex logic into reusable custom hooks, promoting code reuse and encapsulation of business logic within functional components.
+- **Redux Toolkit Integration:** Integrates Redux Toolkit for efficient and predictable state management, providing a centralized store for managing application state and enabling powerful debugging capabilities.
+
+## Testing
+
+Testing is an integral part of the development process. Unit tests are written using Jest and @testing-library/react to ensure components behave as expected and maintain functionality during code changes.
+
+## Deployment and Hosting
+
+The project can be deployed and hosted using platforms like Vercel for seamless deployment and continuous integration. GitHub actions can be configured for automatic deployment triggered by code pushes.
+
+## Continuous Integration
+
+Continuous integration is implemented using GitHub Actions. CI workflows can be set up to automate tasks such as testing, linting, and deployment, ensuring code quality and reliability throughout the development process.
