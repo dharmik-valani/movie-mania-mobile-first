@@ -2,14 +2,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'https://api.themoviedb.org/3/movie';
+const API_URL = process.env.REACT_MOVIE_URL;
 
 // Create an async thunk for fetching movie details
 export const fetchMovieDetails = createAsyncThunk(
   'movies/fetchMovieDetails',
   async  (movieId, thunkAPI) => {
     try {
-      const token = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMTcwNzEyYzExNzVmMWQ1NzMwNjY5OWRhYWEyMTcwNCIsInN1YiI6IjY1Y2I5YTZiMTI5NzBjMDE2MmM1ZWYyNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.q-z9fjD3pBdO1oxlIT8P6ceDTiSPFZ2uJK2XC2io0Iw';
+      const token = process.env.REACT_MOVIE_AUTHORIZATION_TOKEN;
       const response = await axios.get(`${API_URL}/${movieId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -2,8 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Define your API endpoint and API key
-const API_URL = 'http://api.themoviedb.org/3/movie/popular';
-const API_KEY = 'f170712c1175f1d57306699daaa21704';
+const API_URL = `${process.env.REACT_MOVIE_URL}/movie/popular`;
+const API_KEY =  process.env.REACT_MOVIE_APIKEY;
 
 // Create an async thunk for fetching popular movies
 export const fetchPopularMovies = createAsyncThunk(
