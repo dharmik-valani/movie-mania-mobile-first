@@ -1,5 +1,7 @@
 ## Movie Mania: Mobile-First React Application
 
+For Live Demo: For Live Demo: https://movie-mania-mobile-first.vercel.app/
+
 Welcome to Movie Mania, a mobile-first React application designed to provide users with a seamless movie browsing experience. Follow the instructions below to set up and run the project on your local machine.
 
 ## Table of Contents
