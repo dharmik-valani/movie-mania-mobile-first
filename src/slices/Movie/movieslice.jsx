@@ -5,6 +5,7 @@ import axios from 'axios';
 const API_URL = `${import.meta.env.VITE_MOVIE_URL}/movie/popular`;
 const API_KEY =  import.meta.env.VITE_MOVIE_APIKEY;
 
+console.log(API_KEY,API_URL)
 // Create an async thunk for fetching popular movies
 export const fetchPopularMovies = createAsyncThunk(
   'movies/fetchPopularMovies',

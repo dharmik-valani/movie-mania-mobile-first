@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import loader from '../../assets/Movies/loader.gif'
 import Card from "../Card/Card.component";
 import { fetchMovieDetails } from "../../slices/Movie/moviedetails";
+import Button from "../Button/Button.component";
 
 // Store movie images in an array
 
@@ -15,8 +16,7 @@ const MovieDetails = ({ setIsMovieDetails }) => {
   const loading = useSelector((state) => state.oneMoviedetails.loading);
 
   const { id } = useParams(); // Get the id parameter from the URL
-  const movieIndex = parseInt(id) - 1; // Convert id to array index (assuming id starts from 1)
-
+  
   useEffect(() => {
     setIsMovieDetails(true);
   }, []);
@@ -32,7 +32,7 @@ const MovieDetails = ({ setIsMovieDetails }) => {
     <>
       {" "}
       {loading ? (
-        <div className="h-full flex items-center justify-center"><img src={loader} alt="" srcset="" className="w-[30%]"/></div>
+        <div className="h-[calc(100vh-60px)] flex items-center justify-center"><img src={loader} alt="" srcset="" className="w-[30%]"/></div>
       ) : (
         <div>
           <div className="bg-[#746A64] text-white p-4 text-2xl mb-6 font-medium">
@@ -53,11 +53,7 @@ const MovieDetails = ({ setIsMovieDetails }) => {
                 <div className="my-5 text-[#212121] font-bold	">
                   {MovieDetails?.vote_average}/10
                 </div>
-                <button className="bg-[#746A64] p-4 w-full">
-                  <span className="text-white text-[16px]">
-                    Add to Favorite
-                  </span>
-                </button>
+                <Button text={'Add to Favorite'} buttonclassName={'bg-[#746A64] p-4 w-full'} textclassName={"text-white text-[16px]"}/>
               </div>
             </div>
             <div className="mt-4 text-[#757575] text-[14px] leading-[24px]">
